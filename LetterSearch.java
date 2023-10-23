@@ -7,17 +7,13 @@ public class LetterSearch {
         int end = letters.length;
 
         while (start < end) {
-
-       int middle = start+(end-start) / 2;
-
-       if (letters[middle] > target)
+            int middle = start + (end - start) / 2;
+            if (target < letters[middle])
                 end = middle;
             else
                 start = middle + 1;
         }
-
         return letters[start % letters.length];
-
     }
 
     public static void main(String[] args) {
