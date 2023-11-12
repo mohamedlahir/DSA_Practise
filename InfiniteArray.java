@@ -31,7 +31,7 @@ public class InfiniteArray {
     }
     public static void main(String[] args) {
         int[] nums = {0, 1, 2, 3, 4, 5, 6, 7};
-        int target =0;
+        int target =7;
         System.out.println(ans(nums,target));
     }
 }
