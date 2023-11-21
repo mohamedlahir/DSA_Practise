@@ -1,25 +1,24 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddTwoSum {
 
     public int[] twoSum(int num[], int target) {
-        int ans[] = {0,0};
-        int count1=0;int count2=0;
-        for (int i = 0; i < num.length; i++) {
-            for (int j = 1; j < num.length; j++) {
-                if (num[i] + num[j] == target) {
-                    ans[0]=i;
-                    ans[1]=j;
-                    break;
-                }
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i =0; i< num.length; i++) {
+            if(map.containsKey(target - num[i])){
+                return new int[]{map.get(target - num[i]), i};
+            }else {
+                map.put(num[i], i);
             }
         }
-        return ans;
+        return new int[]{-1,-1};
     }
 
     public static void main(String[] args) {
         int num[] = {2, 7, 11, 15};
-        int target = 26;
+        int target = 18;
         AddTwoSum obj = new AddTwoSum();
         System.out.println(Arrays.toString(obj.twoSum(num,target)));
     }
