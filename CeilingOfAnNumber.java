@@ -19,7 +19,7 @@ public class CeilingOfAnNumber {
     }
     public static void main(String[] args) {
         int nums[] = {2, 4, 5, 9, 14, 16, 18};
-        int target = 3;
+        int target = 4;
         System.out.println(ceil(nums, target));
     }
 }
