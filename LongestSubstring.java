@@ -1,20 +1,27 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+
+//import java.lang.reflect.Array;
+//import java.util.Arrays;
 public class LongestSubstring {
+
     public int lengthOfLongestSubstring(String s) {
-        int lengthOfTheString = s.length();
-        String arr[] = s.split("");
-        for (int i = 0; i < arr.length-1; i++) {
-            int count =0;
-            for (int j = 0; j < arr.length-1; j++) {
-                if (arr[i]==arr[j]){
-                    count++;
+        String array[] = s.split("");
+        List<String> list = Arrays.asList(array);
+        for (int i = 0, k = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.size(); j++) {
+                if (list.get(i) == list.get(j)) {
+                    list.remove(j);
                 }
             }
         }
-        return -1;
+        return list.size();
     }
+
     public static void main(String[] args) {
-        String string = "abcabcbb";
-        LongestSubstring obj= new LongestSubstring();
+        String string = "pwwkew";
+        LongestSubstring obj = new LongestSubstring();
         System.out.println(obj.lengthOfLongestSubstring(string));
     }
 }
